@@ -11,7 +11,7 @@ public class Ship : MonoBehaviour
     public float mass;
     public float cool;
 
-    Transform y;
+    Transform controlerRotation;
     Rigidbody rb;
 
 
@@ -19,7 +19,8 @@ public class Ship : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        y = transform;
+
+        
     }
 
     // Update is called once per frame
@@ -33,12 +34,14 @@ public class Ship : MonoBehaviour
         cool = cool - Time.deltaTime;
         if (cool > 0)
         {
+            rb.useGravity = false;
             rb.AddForce(transform.forward * speed);
-            rb.constraints = RigidbodyConstraints.FreezePositionY;
+            //transform.rotation = controlerRotation.rotation;
+            //transform.rotation = Quaternion.Lerp(transform.rotation, controlerRotation.rotation, Time.deltaTime * maniability);
         }
         if (cool <= 0)
         {
-            rb.constraints = RigidbodyConstraints.None;
+            rb.useGravity = true;
         }
         
     }

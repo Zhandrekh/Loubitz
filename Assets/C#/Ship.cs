@@ -28,11 +28,6 @@ public class Ship : MonoBehaviour
         Charge();
     }
 
-    public virtual /*soumise*/ void Ability()
-    {
-        //
-    }
-
     void Charge()
     {
         cool = cool - Time.deltaTime;

@@ -35,6 +35,9 @@ public class Ship : MonoBehaviour
     void Charge()
     {
         cool = cool - Time.deltaTime;
+
+        controlerRotation = transform.parent;
+
         if (cool > 0)
         {
             rb.useGravity = false;

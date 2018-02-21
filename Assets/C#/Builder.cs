@@ -46,4 +46,8 @@ public class Builder : MonoBehaviour {
         spawnPlane = true;
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        spawnPlane = true;
+    }
 }

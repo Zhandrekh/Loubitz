@@ -29,14 +29,12 @@ public class Ship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Charge();
+       
     }
 
-    void Charge()
+    public void Charge()
     {
         cool = cool - Time.deltaTime;
-
-        controlerRotation = transform.parent;
 
         if (cool > 0)
         {
@@ -54,5 +52,10 @@ public class Ship : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(rb.velocity.normalized, transform.up);
         }
         
+    }
+
+    public void FindControl()
+    {
+        controlerRotation = transform.parent;
     }
 }

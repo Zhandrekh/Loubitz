@@ -29,7 +29,7 @@ public class Hand : MonoBehaviour
                 heldObject.transform.parent = null;
                 heldObject.GetComponent<Rigidbody>().isKinematic = false;
                 heldObject.GetComponent<Rigidbody>().velocity = simulator.velocity;
-                heldObject.GetComponent<Ship>().enabled = true;
+                heldObject.GetComponent<Ship>().Charge();
                 heldObject.GetComponent<HeldObject>().parent = null;
                 heldObject = null;
             }
@@ -50,6 +50,7 @@ public class Hand : MonoBehaviour
                         heldObject.transform.localRotation = Quaternion.identity;
                         heldObject.GetComponent<Rigidbody>().isKinematic = true;
                         heldObject.GetComponent<HeldObject>().parent = controller;
+                        heldObject.GetComponent<Ship>().FindControl();
                     }
                 }
             }

@@ -11,16 +11,14 @@ public class Ship : MonoBehaviour
     public float mass;
     public float cool;
 
-    Transform controlerRotation;
+    public Transform controlerRotation;
     Rigidbody rb;
 
 
     // Use this for initialization
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-
-        
+        rb = GetComponent<Rigidbody>();     
     }
 
     // Update is called once per frame
@@ -37,11 +35,13 @@ public class Ship : MonoBehaviour
             rb.useGravity = false;
             rb.AddForce(transform.forward * speed);
             //transform.rotation = controlerRotation.rotation;
-            //transform.rotation = Quaternion.Lerp(transform.rotation, controlerRotation.rotation, Time.deltaTime * maniability);
+            transform.rotation = Quaternion.Lerp(transform.rotation, controlerRotation.rotation, Time.deltaTime * maniability);
         }
+
         if (cool <= 0)
         {
             rb.useGravity = true;
+            transform.rotation = transform.rotation;
         }
         
     }

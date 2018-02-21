@@ -29,7 +29,7 @@ public class Hand : MonoBehaviour
                 heldObject.transform.parent = null;
                 heldObject.GetComponent<Rigidbody>().isKinematic = false;
                 heldObject.GetComponent<Rigidbody>().velocity = simulator.velocity;
-                heldObject.GetComponent<Ship>().Charge();
+                heldObject.GetComponent<Ship>().GoCharge();
                 heldObject.GetComponent<HeldObject>().parent = null;
                 heldObject = null;
             }

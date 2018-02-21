@@ -13,11 +13,12 @@ public class Ship : MonoBehaviour
 
     public Transform controlerRotation;
     Rigidbody rb;
-
+    bool doIHaveToCharge = false;
 
     // Use this for initialization
     void Start()
     {
+        doIHaveToCharge = false;
         rb = GetComponent<Rigidbody>();     
     }
 
@@ -29,9 +30,16 @@ public class Ship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (doIHaveToCharge)
+        {
+            Charge();
+        }
     }
 
+    public void GoCharge()
+    {
+        doIHaveToCharge = true;
+    }
     public void Charge()
     {
         cool = cool - Time.deltaTime;

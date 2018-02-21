@@ -21,6 +21,11 @@ public class Ship : MonoBehaviour
         rb = GetComponent<Rigidbody>();     
     }
 
+	void OnCollisionEnter(){
+		if (cool<0) 
+			enabled = false;
+	}
+
     // Update is called once per frame
     void Update()
     {
@@ -33,6 +38,7 @@ public class Ship : MonoBehaviour
         if (cool > 0)
         {
             rb.useGravity = false;
+            rb.drag = 5;
             rb.AddForce(transform.forward * speed);
             //transform.rotation = controlerRotation.rotation;
             transform.rotation = Quaternion.Lerp(transform.rotation, controlerRotation.rotation, Time.deltaTime * maniability);
@@ -41,7 +47,8 @@ public class Ship : MonoBehaviour
         if (cool <= 0)
         {
             rb.useGravity = true;
-            transform.rotation = transform.rotation;
+            rb.drag = 0;
+            transform.rotation = Quaternion.LookRotation(rb.velocity.normalized, transform.up);
         }
         
     }

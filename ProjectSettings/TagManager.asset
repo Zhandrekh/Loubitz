@@ -7,6 +7,8 @@ TagManager:
   - Head
   - Hull
   - Wings
+  - Back
+  - Controller
   layers:
   - Default
   - TransparentFX

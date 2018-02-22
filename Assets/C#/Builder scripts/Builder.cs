@@ -9,6 +9,7 @@ public class Builder : MonoBehaviour {
 	public GameObject hulls;
     public GameObject wings;
     public GameObject heads;
+    public GameObject backs;
 	public int selectedHull;
     public int selectedWing;
     public int selectedHead;
@@ -17,6 +18,7 @@ public class Builder : MonoBehaviour {
     public Transform headPos;
     public Transform hullPos;
     public Transform wingsPos;
+    public Transform backPos;
 
 	// Use this for initialization
 	void Start () {
@@ -29,29 +31,24 @@ public class Builder : MonoBehaviour {
         hulls = GetComponentInChildren<HullSelection>().refHull;
         wings = GetComponentInChildren<WingsSelection>().refWings;
         heads = GetComponentInChildren<HeadSelection>().refHead;
+        backs = GetComponentInChildren<BackSelection>().refBack;
 
 		if (spawnPlane) {
 			spawnPlane = false;
-            Debug.Log("DOING THE THING");
+            
 			GameObject myPlane = Instantiate (plane, spawnPos.position, spawnPos.rotation);
 
-			GameObject hull = Instantiate (hulls, hullPos.position, hullPos.rotation, myPlane.transform);
-			//hull.transform.localPosition = Vector3.zero;
-			//hull.transform.localRotation = Quaternion.identity;
-
-            GameObject wing = Instantiate(wings, wingsPos.position, wingsPos.rotation, myPlane.transform);
-            //wing.transform.localPosition = Vector3.zero;
-            //wing.transform.localRotation = Quaternion.identity;
-
+			GameObject hull = Instantiate (hulls, hullPos.position, hullPos.rotation, myPlane.transform);			
+            GameObject wing = Instantiate(wings, wingsPos.position, wingsPos.rotation, myPlane.transform);            
             GameObject head = Instantiate(heads, headPos.position, headPos.rotation, myPlane.transform);
-            //head.transform.localPosition = Vector3.zero;
-            //head.transform.localRotation = Quaternion.identity;
+            GameObject back = Instantiate(backs, backPos.position, backPos.rotation, myPlane.transform);
+            
         }
 	}
 
     private void OnTriggerEnter(Collider other)
     {
-        spawnPlane = true;
+        if(other.tag == "Controller") spawnPlane = true;
     }
 
 }

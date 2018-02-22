@@ -23,6 +23,7 @@ public class HeadSelection : MonoBehaviour {
             head = other.gameObject;
             head.GetComponent<Rigidbody>().isKinematic = true;
             head.GetComponent<Rigidbody>().useGravity = false;
+            head.transform.parent = this.transform;
             head.transform.position = pos.position;
             head.transform.rotation = pos.rotation;
 

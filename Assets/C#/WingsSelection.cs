@@ -17,6 +17,8 @@ public class WingsSelection : MonoBehaviour {
         if(other.tag == "Wings")
         {
             wings = other.gameObject;
+            wings.GetComponent<Rigidbody>().isKinematic = true;
+            wings.GetComponent<Rigidbody>().useGravity = false;
             wings.transform.position = pos.position;
             wings.transform.rotation = pos.rotation;
         }

@@ -21,6 +21,8 @@ public class HeadSelection : MonoBehaviour {
         if (other.tag == "Head")
         {
             head = other.gameObject;
+            head.GetComponent<Rigidbody>().isKinematic = true;
+            head.GetComponent<Rigidbody>().useGravity = false;
             head.transform.position = pos.position;
             head.transform.rotation = pos.rotation;
 

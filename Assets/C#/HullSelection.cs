@@ -16,6 +16,8 @@ public class HullSelection : MonoBehaviour {
         if (other.tag == "Hull")
         {
             hull = other.gameObject;
+            hull.GetComponent<Rigidbody>().isKinematic = true;
+            hull.GetComponent<Rigidbody>().useGravity = false;
             hull.transform.position = pos.transform.position;
             hull.transform.rotation = pos.transform.rotation;
         }

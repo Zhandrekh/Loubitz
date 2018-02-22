@@ -33,17 +33,17 @@ public class Builder : MonoBehaviour {
 		if (spawnPlane) {
 			spawnPlane = false;
             Debug.Log("DOING THE THING");
-			GameObject myPlane = Instantiate (plane, spawnPos.position, transform.rotation);
+			GameObject myPlane = Instantiate (plane, spawnPos.position, spawnPos.rotation);
 
-			GameObject hull = Instantiate (hulls, hullPos.position, Quaternion.identity, myPlane.transform);
+			GameObject hull = Instantiate (hulls, hullPos.position, hullPos.rotation, myPlane.transform);
 			//hull.transform.localPosition = Vector3.zero;
 			//hull.transform.localRotation = Quaternion.identity;
 
-            GameObject wing = Instantiate(wings, wingsPos.position, Quaternion.identity, myPlane.transform);
+            GameObject wing = Instantiate(wings, wingsPos.position, wingsPos.rotation, myPlane.transform);
             //wing.transform.localPosition = Vector3.zero;
             //wing.transform.localRotation = Quaternion.identity;
 
-            GameObject head = Instantiate(heads, headPos.position, Quaternion.identity, myPlane.transform);
+            GameObject head = Instantiate(heads, headPos.position, headPos.rotation, myPlane.transform);
             //head.transform.localPosition = Vector3.zero;
             //head.transform.localRotation = Quaternion.identity;
         }

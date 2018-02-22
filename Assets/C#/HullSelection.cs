@@ -5,6 +5,7 @@ using UnityEngine;
 public class HullSelection : MonoBehaviour {
 
     public Transform pos;
+    public GameObject refHull;
     public GameObject hull;
 
 	void Update () {
@@ -16,6 +17,7 @@ public class HullSelection : MonoBehaviour {
         if (other.tag == "Hull")
         {
             hull = other.gameObject;
+            refHull = other.GetComponent<HullReferance>().hullRef;
             hull.GetComponent<Rigidbody>().isKinematic = true;
             hull.GetComponent<Rigidbody>().useGravity = false;
             hull.transform.parent = this.transform;

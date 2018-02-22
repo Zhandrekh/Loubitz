@@ -26,10 +26,17 @@ public class Hand : MonoBehaviour
             simulator.velocity = (transform.position - simulator.position) * 50f;
             if (controller.controller.GetPressUp(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger))
             {
+                if(heldObject.transform.parent != this.transform)
+                {
+                    heldObject = null;
+                    return;                    
+                }
+                
                 heldObject.transform.parent = null;
                 heldObject.GetComponent<Rigidbody>().isKinematic = false;
                 heldObject.GetComponent<Rigidbody>().velocity = simulator.velocity;
-                heldObject.GetComponent<Ship>().GoCharge();
+                Ship ship = heldObject.GetComponent<Ship>();
+                if (ship != null) ship.GoCharge();
                 heldObject.GetComponent<HeldObject>().parent = null;
                 heldObject = null;
             }
@@ -42,7 +49,7 @@ public class Hand : MonoBehaviour
 
                 foreach (Collider col in cols)
                 {
-                    if (heldObject == null && col.GetComponent<HeldObject>() && col.GetComponent<HeldObject>().parent == null)
+                    if (heldObject == null && col.GetComponent<HeldObject>()/* && col.GetComponent<HeldObject>().parent == null*/)
                     {
                         heldObject = col.gameObject;
                         heldObject.transform.parent = transform;
@@ -50,7 +57,8 @@ public class Hand : MonoBehaviour
                         heldObject.transform.localRotation = Quaternion.identity;
                         heldObject.GetComponent<Rigidbody>().isKinematic = true;
                         heldObject.GetComponent<HeldObject>().parent = controller;
-                        heldObject.GetComponent<Ship>().FindControl();
+                        Ship ship = heldObject.GetComponent<Ship>();
+                        if (ship!=null) ship.FindControl();
                     }
                 }
             }

@@ -5,22 +5,15 @@ using UnityEngine;
 public class HeadSelection : MonoBehaviour {
 
     public Transform pos;
+    public GameObject refHead;
     public GameObject head;
-	// Use this for initialization
-	void Start () {
-		
-	}
-
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Head")
         {
             head = other.gameObject;
+            refHead = other.GetComponent<HeadReferance>().headRef;
             head.GetComponent<Rigidbody>().isKinematic = true;
             head.GetComponent<Rigidbody>().useGravity = false;
             head.transform.parent = this.transform;

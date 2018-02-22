@@ -26,13 +26,13 @@ public class Builder : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        hulls = GetComponentInChildren<HullSelection>().hull;
-        wings = GetComponentInChildren<WingsSelection>().wings;
-        heads = GetComponentInChildren<HeadSelection>().head;
+        hulls = GetComponentInChildren<HullSelection>().refHull;
+        wings = GetComponentInChildren<WingsSelection>().refWings;
+        heads = GetComponentInChildren<HeadSelection>().refHead;
 
 		if (spawnPlane) {
 			spawnPlane = false;
-
+            Debug.Log("DOING THE THING");
 			GameObject myPlane = Instantiate (plane, spawnPos.position, transform.rotation);
 
 			GameObject hull = Instantiate (hulls, hullPos.position, Quaternion.identity, myPlane.transform);

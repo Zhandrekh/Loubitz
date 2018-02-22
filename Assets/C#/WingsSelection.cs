@@ -5,6 +5,7 @@ using UnityEngine;
 public class WingsSelection : MonoBehaviour {
 
     public Transform pos;
+    public GameObject refWings;
     public GameObject wings;
 	
 	
@@ -17,6 +18,7 @@ public class WingsSelection : MonoBehaviour {
         if(other.tag == "Wings")
         {
             wings = other.gameObject;
+            refWings = other.GetComponent<WingsReferance>().wingsRef;
             wings.GetComponent<Rigidbody>().isKinematic = true;
             wings.GetComponent<Rigidbody>().useGravity = false;
             wings.transform.parent = this.transform;

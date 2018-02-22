@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HeadSelection : MonoBehaviour {
 
+    public Transform pos;
     public GameObject head;
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,9 @@ public class HeadSelection : MonoBehaviour {
         if (other.tag == "Head")
         {
             head = other.gameObject;
+            head.transform.position = pos.position;
+            head.transform.rotation = pos.rotation;
+
         }
     }
 }

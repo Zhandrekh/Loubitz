@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WingsSelection : MonoBehaviour {
 
+    public Transform pos;
     public GameObject wings;
 	
 	
@@ -16,6 +17,8 @@ public class WingsSelection : MonoBehaviour {
         if(other.tag == "Wings")
         {
             wings = other.gameObject;
+            wings.transform.position = pos.position;
+            wings.transform.rotation = pos.rotation;
         }
     }
 }

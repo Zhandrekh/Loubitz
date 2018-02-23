@@ -9,6 +9,9 @@ TagManager:
   - Wings
   - Back
   - Controller
+  - FxTemporaire
+  - projectile
+  - Avion
   layers:
   - Default
   - TransparentFX

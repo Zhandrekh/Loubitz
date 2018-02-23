@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114831919098597006}
   m_Layer: 0
   m_Name: 'avion '
-  m_TagString: Untagged
+  m_TagString: Avion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
-  acceleration: 0
   maniability: 5
   mass: 0
   cool: 3

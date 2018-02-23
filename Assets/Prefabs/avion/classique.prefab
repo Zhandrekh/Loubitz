@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4931041337544934}
   - component: {fileID: 33548415087208714}
   - component: {fileID: 23010260893351454}
-  - component: {fileID: 95493156731423920}
+  - component: {fileID: 114806051160942824}
   m_Layer: 0
   m_Name: Nez_Requin
   m_TagString: Untagged
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4036816138362534}
   - component: {fileID: 33899437517456540}
   - component: {fileID: 23917659579149228}
-  - component: {fileID: 95427837538452382}
+  - component: {fileID: 114747823818405668}
   m_Layer: 0
   m_Name: Crop_Cylindre
   m_TagString: Untagged
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 4721904663404904}
   - component: {fileID: 33936250786022888}
   - component: {fileID: 23143613930604410}
-  - component: {fileID: 95784015228321786}
+  - component: {fileID: 114235120324574304}
   m_Layer: 0
   m_Name: Arriere_petireac
   m_TagString: Untagged
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4382518208075934}
   - component: {fileID: 33603343091459598}
   - component: {fileID: 23211639109461422}
-  - component: {fileID: 95605978846910868}
+  - component: {fileID: 114119771827778846}
   m_Layer: 0
   m_Name: Ailes_Classique
   m_TagString: Untagged
@@ -405,74 +405,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7244765, y: 0.11773062, z: 0.4297965}
   m_Center: {x: 0.00063979626, y: 0.039563417, z: 0.011420757}
---- !u!95 &95427837538452382
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1646296561858824}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 0dcb882a47b989947b6bc0e661fb6aa9, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95493156731423920
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1544694396927926}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: da01d419f52e4e0499fb6fc1ac2185bc, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95605978846910868
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1916095074849402}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 567865ee9164ae44ea3036c78a7e5b41, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95784015228321786
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1723742591356184}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: c390c535eb99f6943800637dbeaf815c, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114010521944682090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -485,11 +417,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
-  acceleration: 0
   maniability: 5
   mass: 0
   cool: 3
   controlerRotation: {fileID: 0}
+--- !u!114 &114119771827778846
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1916095074849402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b202b5106964b2642bb1ef091d62a128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wingSpeed: 25
+  wingMania: 0.5
+  wingMass: 0.25
+--- !u!114 &114235120324574304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1723742591356184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b56e814205c9984d9d2eea2e4cb071d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backSpeed: 25
+  backMania: 0.5
+  backMass: 0.25
 --- !u!114 &114445450648556256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -502,3 +461,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+--- !u!114 &114747823818405668
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1646296561858824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c04c8d49a2a3e949a5953e77ab50b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hullSpeed: 25
+  hullMania: 0.5
+  hullMass: 0.25
+--- !u!114 &114806051160942824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1544694396927926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11c59f9e8dbec64c9aafc9a0b9f23b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headSpeed: 25
+  headMania: 0.5
+  headMass: 0.25

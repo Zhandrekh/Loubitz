@@ -34,6 +34,7 @@ public class Hand : MonoBehaviour
                 
                 heldObject.transform.parent = null;
                 heldObject.GetComponent<Rigidbody>().isKinematic = false;
+                heldObject.GetComponent<Rigidbody>().useGravity = true;
                 heldObject.GetComponent<Rigidbody>().velocity = simulator.velocity;
                 Ship ship = heldObject.GetComponent<Ship>();
                 if (ship != null) ship.GoCharge();

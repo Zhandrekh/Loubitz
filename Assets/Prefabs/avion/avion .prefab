@@ -124,11 +124,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d1bed69afb0d8478f3b058d987bfc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
-  maniability: 5
+  speed: 0
+  maniability: 0
   mass: 0
   cool: 3
   controlerRotation: {fileID: 0}
+  p_head: {fileID: 0}
+  p_back: {fileID: 0}
+  p_back2: {fileID: 0}
+  doIHaveToCharge: 0
 --- !u!114 &114831919098597006
 MonoBehaviour:
   m_ObjectHideFlags: 1

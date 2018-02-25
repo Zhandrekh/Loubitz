@@ -27,19 +27,48 @@ public class Ship : MonoBehaviour
     float bMass;
 
     public Transform controlerRotation;
+
     Rigidbody rb;
-    bool doIHaveToCharge = false;
+
+    public ParticleSystem p_head;
+    ParticleSystem p_wings;
+    ParticleSystem p_wings2;
+    ParticleSystem p_wings3;
+    ParticleSystem p_wings4;
+    public ParticleSystem p_back;
+    public ParticleSystem p_back2;
+    ParticleSystem p_back3;
+
+    public bool doIHaveToCharge;
 
     // Use this for initialization
     void Start()
     {
-        doIHaveToCharge = false;
-        rb = GetComponent<Rigidbody>();     
+        //doIHaveToCharge = false;
+        rb = GetComponent<Rigidbody>();
+        
+        p_head = this.gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<ParticleSystem>();
+        
+        p_back = this.gameObject.transform.GetChild(3).GetChild(0).gameObject.GetComponent<ParticleSystem>();
+        p_back2 = this.gameObject.transform.GetChild(3).GetChild(1).gameObject.GetComponent<ParticleSystem>();
+        p_wings = this.gameObject.transform.GetChild(2).GetChild(0).gameObject.GetComponent<ParticleSystem>();
+        p_wings2 = this.gameObject.transform.GetChild(2).GetChild(1).gameObject.GetComponent<ParticleSystem>();
+        
+
+
     }
 
 	void OnCollisionEnter(){
-		if (cool<0) 
-			enabled = false;
+		if (doIHaveToCharge)
+        {
+            if (p_head != null)
+            {
+                p_head.Play();
+            }
+            doIHaveToCharge = false;
+            Destroy(this.gameObject, 1);
+        }
+            
 	}
 
     // Update is called once per frame
@@ -81,12 +110,14 @@ public class Ship : MonoBehaviour
         maniability = wMania + hMania + hdMania + bMania;
         mass = wMass + hMass + hdMass + bMass;
 
-        rb.drag = maniability;
-        rb.mass = mass;
+        
+        
         if (doIHaveToCharge)
         {
             Charge();
         }
+
+        //Charge();
     }
 
     public void GoCharge()
@@ -99,8 +130,22 @@ public class Ship : MonoBehaviour
 
         if (cool > 0)
         {
+            if (p_wings != null)
+            {
+                p_wings.Play();
+            }
+            if (p_wings2 != null)
+            {
+                p_wings2.Play();
+            }
+            if (p_back != null)
+            {
+                p_back.Play();
+            }
+            
             rb.useGravity = false;
-            rb.drag = 5;
+            rb.drag = maniability;
+            rb.mass = mass;
             rb.AddForce(transform.forward * speed);
             //transform.rotation = controlerRotation.rotation;
             transform.rotation = Quaternion.Lerp(transform.rotation, controlerRotation.rotation, Time.deltaTime * maniability);
@@ -108,6 +153,10 @@ public class Ship : MonoBehaviour
 
         if (cool <= 0)
         {
+            if(p_back2 != null)
+            {
+                p_back2.Play();
+            }
             rb.useGravity = true;
             rb.drag = 0;
             transform.rotation = Quaternion.LookRotation(rb.velocity.normalized, transform.up);

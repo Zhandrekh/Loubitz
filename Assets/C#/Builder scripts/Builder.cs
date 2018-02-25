@@ -38,9 +38,9 @@ public class Builder : MonoBehaviour {
             
 			GameObject myPlane = Instantiate (plane, spawnPos.position, spawnPos.rotation);
 
-			GameObject hull = Instantiate (hulls, hullPos.position, hullPos.rotation, myPlane.transform);			
-            GameObject wing = Instantiate(wings, wingsPos.position, wingsPos.rotation, myPlane.transform);            
             GameObject head = Instantiate(heads, headPos.position, headPos.rotation, myPlane.transform);
+            GameObject hull = Instantiate (hulls, hullPos.position, hullPos.rotation, myPlane.transform);			
+            GameObject wing = Instantiate(wings, wingsPos.position, wingsPos.rotation, myPlane.transform);           
             GameObject back = Instantiate(backs, backPos.position, backPos.rotation, myPlane.transform);
             
         }

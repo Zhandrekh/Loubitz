@@ -14,6 +14,7 @@ public class DestructOnCollide : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Avion")
         {
+            Debug.Log("Outch !!");
             rb.useGravity = true;
             rb.isKinematic = false;
         }

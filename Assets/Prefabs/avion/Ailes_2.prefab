@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b202b5106964b2642bb1ef091d62a128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wingSpeed: 20
+  wingSpeed: 35
   wingMania: 0.5
   wingMass: 0.25
 --- !u!198 &198309399485874302

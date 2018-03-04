@@ -95,5 +95,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wingSpeed: 10
-  wingMania: 0
-  wingMass: 0
+  wingMania: 1
+  wingMass: 0.5

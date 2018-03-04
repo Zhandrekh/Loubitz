@@ -123,6 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b56e814205c9984d9d2eea2e4cb071d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backSpeed: 0
-  backMania: 0
-  backMass: 0
+  backSpeed: 15
+  backMania: 1
+  backMass: 1

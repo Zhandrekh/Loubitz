@@ -94,6 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b202b5106964b2642bb1ef091d62a128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wingSpeed: 40
-  wingMania: 0
-  wingMass: 0
+  wingSpeed: 25
+  wingMania: 0.5
+  wingMass: 0.3

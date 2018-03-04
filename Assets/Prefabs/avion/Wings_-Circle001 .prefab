@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 4439307950947766}
   - component: {fileID: 33438051957311224}
   - component: {fileID: 23689296436349612}
+  - component: {fileID: 114294183299732916}
   m_Layer: 0
   m_Name: 'Wings_-Circle001 '
   m_TagString: Untagged
@@ -454,6 +455,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1977867341639846}
   m_Mesh: {fileID: 4300000, guid: cc085946d85a1624693d6ef0097b9a82, type: 3}
+--- !u!114 &114294183299732916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1977867341639846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b202b5106964b2642bb1ef091d62a128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wingSpeed: 45
+  wingMania: 0.5
+  wingMass: 1
 --- !u!198 &198008002444525832
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -311,9 +311,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11c59f9e8dbec64c9aafc9a0b9f23b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  headSpeed: 0
-  headMania: 0
-  headMass: 0
+  headSpeed: 5
+  headMania: 1
+  headMass: 0.3
 --- !u!198 &198143318874001780
 ParticleSystem:
   m_ObjectHideFlags: 1
